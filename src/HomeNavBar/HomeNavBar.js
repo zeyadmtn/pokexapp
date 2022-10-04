@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function HomeNavbar() {
     return ( 
         <View style={styles.container}>
             <Text style={styles.title}>Poki-X</Text>
-            <View></View>
+            <View style={styles.icon}>
+            <Icon name="search" size={24} color="black" />
+            </View>
+
         </View>
      );
 }
@@ -18,15 +21,19 @@ const styles = StyleSheet.create({
         borderBottomEndRadius: 6,
         borderBottomStartRadius: 6,
         backgroundColor: '#ffff00',
-        padding: 10,
+        padding: 15,
+        flexDirection: 'row'
     },
     title: {
+        fontFamily: "Segoe UI Bold",
         fontSize: 22,
         color: 'black',
         width: '50%',
         marginLeft: 50,
-        fontWeight: 'bold'
 
+    },
+    icon: {
+        marginLeft: 76,
     }
 })
 
