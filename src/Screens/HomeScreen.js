@@ -1,11 +1,16 @@
-import { Text, View } from "react-native";
 import React from 'react';
+import { View } from "react-native";
 import HomeNavbar from "../HomeNavBar/HomeNavBar";
+import PokemonList from "../HomePokemonList/PokemonList";
 
 function HomeScreen() {
-    return ( 
-        <HomeNavbar />
-     );
+    return (
+        <View>
+            <HomeNavbar />
+            <PokemonList />
+
+        </View>
+    );
 }
 
 export default HomeScreen;
