@@ -12,14 +12,18 @@ import {
 } from 'react-native';
 import { Router, Scene, Stack } from 'react-native-router-flux';
 import HomeScreen from './src/Screens/HomeScreen';
+import PokemonDetailScreen from './src/Screens/PokemonDetailScreen';
 import SplashScreen from './src/Screens/SplashScreen';
 
 const App = () => {
   return (
     <Router>
       <Stack key="root" >
+        
         <Scene key='splash' component={SplashScreen} title='splash' initial={true} hideNavBar={true} />
         <Scene key='home' component={HomeScreen} title='home'hideNavBar={true} />
+        <Scene key='pokemonDetail' component={PokemonDetailScreen} title='pokemon detail'hideNavBar={true} />
+        
       </Stack>
     </Router>
   );

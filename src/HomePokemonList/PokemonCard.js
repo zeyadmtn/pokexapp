@@ -1,5 +1,7 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Actions } from 'react-native-router-flux';
+import { back } from 'react-native/Libraries/Animated/Easing';
 import { POKEMON_TYPE_COLORS } from '../constants/pokemonTypeColors';
 
 const PokemonCard = (props) => {
@@ -10,7 +12,7 @@ const PokemonCard = (props) => {
     const pokemonName = props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.slice(1);
 
     return (
-        <Pressable style={[styles.container, { backgroundColor }]}>
+        <Pressable onPress={() => Actions.pokemonDetail({pokemon: props.pokemon, bgColor: backgroundColor})} style={[styles.container, { backgroundColor }]} >
             <View style={styles.left_side_container}>
                 <Text style={styles.pokemon_name}>{pokemonName}</Text>
                 <View style={styles.pokemon_types_container}>
