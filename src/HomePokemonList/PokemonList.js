@@ -1,9 +1,9 @@
-import { Text, View } from "react-native";
-import { useEffect, useState } from "react";
-import {fetchAllPokemonData, fetchPokemonList} from "../api/fetchPokemonData";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Image, ImageBackground, ScrollView, View } from "react-native";
+import { fetchAllPokemonData } from "../api/fetchPokemonData";
+import PokemonCard from "./PokemonCard";
 
-function PokemonList() {
+const PokemonList = () => {
 
     const [pokemonList, setPokemonList] = useState();
 
@@ -12,13 +12,36 @@ function PokemonList() {
         setPokemonList(data);
     }
 
+    // const renderItem = ({ item }) => (
+    //     <Item title={item.title} />
+    //   );
+
+    //   return (
+    //     <SafeAreaView style={styles.container}>
+    //       <FlatList
+    //         data={DATA}
+    //         renderItem={renderItem}
+    //         keyExtractor={item => item.id}
+    //       />
+
+    const renderPokemonCard = ({ pokemonParam }) => (
+        <PokemonCard pokemon={pokemonParam} />
+    );
+
     useEffect(() => {
         fetchData();
-      }, []);
+    }, []);
 
-    return ( 
-        <View><Text>hi </Text></View>
-     );
+    return (
+        <View style={{ flex: 1, width: '100%', flexGrow: 1 }}>
+            <FlatList
+                data={pokemonList}
+                renderItem={({item}) => <PokemonCard pokemon={item} />}
+                keyExtractor={item => item.name} 
+                scrollEnabled={true}
+                />
+        </View>
+    );
 }
 
 export default PokemonList;

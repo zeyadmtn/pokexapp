@@ -2,16 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-function HomeNavbar() {
-    return ( 
+const HomeNavbar = () => {
+    return (
         <View style={styles.container}>
             <Text style={styles.title}>Poki-X</Text>
             <View style={styles.icon}>
-            <Icon name="search" size={24} color="black" />
+                <Icon name="search" size={24} color="black" />
             </View>
 
         </View>
-     );
+    );
 }
 
 const styles = StyleSheet.create({
@@ -22,7 +22,12 @@ const styles = StyleSheet.create({
         borderBottomStartRadius: 6,
         backgroundColor: '#ffff00',
         padding: 15,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        // borderBottomColor: 'black',
+        // borderBottomWidth: 2,
+        elevation: 5,
+        shadowColor: 'black',
+
     },
     title: {
         fontFamily: "Segoe UI Bold",
