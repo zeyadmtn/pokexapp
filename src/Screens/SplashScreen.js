@@ -17,7 +17,7 @@ function SplashScreen() {
         <View>
             <Image 
                     source={
-                        require('../../assets/splashscreen.jpg')
+                        require('../../assets/images/splashscreen.jpg')
                     }
                     style={styles.splash_image}
                     resizeMode='stretch'

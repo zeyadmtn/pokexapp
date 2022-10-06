@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
 
     },
     title: {
-        fontFamily: "Segoe UI Bold",
-        fontSize: 22,
+        fontFamily: 'Pocket Monk',
+        fontSize: 27,
         color: 'black',
         width: '50%',
         marginLeft: 50,
+        letterSpacing: 2.5
 
     },
     icon: {
