@@ -1,20 +1,24 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from "react-native";
+import { POKEMON_TYPE_COLORS } from '../constants/pokemonTypeColors';
 
 const PokemonCard = (props) => {
 
-    const mockPokemon = {
-        name: 'Charizard',
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png',
-        type: 'fire',
+    const backgroundColor = POKEMON_TYPE_COLORS[props.pokemon.types[0].type.name];
 
-    }
+    //Capitalizes the first letter in the pokemon name. pikachu => Pikachu
+    const pokemonName = props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.slice(1);
+
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {backgroundColor}]}>
             <View style={styles.left_side_container}>
-                <Text style={styles.pokemon_name}>{props.pokemon.name}</Text>
+                <Text style={styles.pokemon_name}>{pokemonName}</Text>
                 <View style={styles.pokemon_types_container}>
-                    <Text>{props.pokemon.types[0].type.name}</Text>
+
+                    {props.pokemon.types.map((type) =>
+                        <Text key={type.type.url} style={styles.pokemon_type_text}>{type.type.name}</Text> 
+                    )}
+
                 </View>
             </View>
 
@@ -34,7 +38,6 @@ const PokemonCard = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fb7c7c',
         width: '100%',
         height: 85,
         marginTop: 20,
@@ -79,11 +82,16 @@ const styles = StyleSheet.create({
         maxWidth: 110,
         marginLeft: 25,
         // maxHeight: 90,
-        
+
     },
     pokemon_types_container: {
+        flexDirection: 'row',
         marginTop: 'auto',
         marginBottom: 10,
+    },
+    pokemon_type_text: {
+        marginRight: 30,
+
     }
 })
 

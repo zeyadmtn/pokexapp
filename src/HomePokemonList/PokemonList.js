@@ -12,20 +12,8 @@ const PokemonList = () => {
         setPokemonList(data);
     }
 
-    // const renderItem = ({ item }) => (
-    //     <Item title={item.title} />
-    //   );
-
-    //   return (
-    //     <SafeAreaView style={styles.container}>
-    //       <FlatList
-    //         data={DATA}
-    //         renderItem={renderItem}
-    //         keyExtractor={item => item.id}
-    //       />
-
-    const renderPokemonCard = ({ pokemonParam }) => (
-        <PokemonCard pokemon={pokemonParam} />
+    const renderPokemonCard = ({ item }) => (
+        <PokemonCard pokemon={item} />
     );
 
     useEffect(() => {
@@ -36,7 +24,7 @@ const PokemonList = () => {
         <View style={{ flex: 1, width: '100%', flexGrow: 1 }}>
             <FlatList
                 data={pokemonList}
-                renderItem={({item}) => <PokemonCard pokemon={item} />}
+                renderItem={renderPokemonCard}
                 keyExtractor={item => item.name} 
                 scrollEnabled={true}
                 />
