@@ -6,7 +6,7 @@ import { POKEMON_TYPE_COLORS } from '../constants/pokemonTypeColors';
 
 const PokemonCard = (props) => {
 
-    const backgroundColor = POKEMON_TYPE_COLORS[props.pokemon.types[0].type.name];
+    const backgroundColor = POKEMON_TYPE_COLORS[props.pokemon.types[0].type.name].main;
 
     //Capitalizes the first letter in the pokemon name. pikachu => Pikachu
     const pokemonName = props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.slice(1);
