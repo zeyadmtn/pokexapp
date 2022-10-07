@@ -38,6 +38,7 @@
 		6B896F0881FF410086CF9DBE /* Pokemon GB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB5896737B954F9EAFFDE5A3 /* Pokemon GB.ttf */; };
 		B5C7A772295A41BF9C9079E2 /* Pocket Monk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F50C6AF89B87467B958CE73D /* Pocket Monk.ttf */; };
 		98E95D918FC04F27AB06F2E4 /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9AD57722EF46A58C5FF7A9 /* Pokemon Solid.ttf */; };
+		2CF726D9246A47FFBAB9F433 /* Pokemon Hollow Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78F7DE1C27EE40939894232F /* Pokemon Hollow Normal.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		FB5896737B954F9EAFFDE5A3 /* Pokemon GB.ttf */ = {isa = PBXFileReference; name = "Pokemon GB.ttf"; path = "../assets/fonts/Pokemon GB.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F50C6AF89B87467B958CE73D /* Pocket Monk.ttf */ = {isa = PBXFileReference; name = "Pocket Monk.ttf"; path = "../assets/fonts/Pocket Monk.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AC9AD57722EF46A58C5FF7A9 /* Pokemon Solid.ttf */ = {isa = PBXFileReference; name = "Pokemon Solid.ttf"; path = "../assets/fonts/Pokemon Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		78F7DE1C27EE40939894232F /* Pokemon Hollow Normal.ttf */ = {isa = PBXFileReference; name = "Pokemon Hollow Normal.ttf"; path = "../assets/fonts/Pokemon Hollow Normal.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				FB5896737B954F9EAFFDE5A3 /* Pokemon GB.ttf */,
 				F50C6AF89B87467B958CE73D /* Pocket Monk.ttf */,
 				AC9AD57722EF46A58C5FF7A9 /* Pokemon Solid.ttf */,
+				78F7DE1C27EE40939894232F /* Pokemon Hollow Normal.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				6B896F0881FF410086CF9DBE /* Pokemon GB.ttf in Resources */,
 				B5C7A772295A41BF9C9079E2 /* Pocket Monk.ttf in Resources */,
 				98E95D918FC04F27AB06F2E4 /* Pokemon Solid.ttf in Resources */,
+				2CF726D9246A47FFBAB9F433 /* Pokemon Hollow Normal.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

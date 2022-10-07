@@ -8,7 +8,8 @@ import DetailsSection from './DetailsSection';
 
 const PokemonDetailDisplay = (props) => {
 
-    const [isFavorite, setIsFavorite] = useState(false)
+    const [isFavorite, setIsFavorite] = useState(false);
+
 
     const pokemon = props.pokemon;
     const bgColor = POKEMON_TYPE_COLORS[pokemon.types[0].type.name].main;
