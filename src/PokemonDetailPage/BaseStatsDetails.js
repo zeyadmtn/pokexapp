@@ -13,7 +13,7 @@ const BaseStatsDetails = (props) => {
         <View style={styles.container}>
             {
                 pokemon.stats.map((stat) => {
-                    return (<View style={styles.stat_container}>
+                    return (<View key={stat.stat.name} style={styles.stat_container}>
                         <Text style={styles.stat_text}>{stat.stat.name.toUpperCase()}:</Text>
                         <Text style={styles.stat_text}>{stat.base_stat}</Text>
                     </View>)

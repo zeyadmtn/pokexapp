@@ -9,6 +9,13 @@ import HomeScreen from './src/Screens/HomeScreen';
 import LoginScreen from './src/Screens/LoginScreen';
 import PokemonDetailScreen from './src/Screens/PokemonDetailScreen';
 import SplashScreen from './src/Screens/SplashScreen';
+import RegisterScreen from "./src/Screens/RegisterScreen";
+
+//TODO: Login validation alert
+//TODO: Registration Accounts Validation
+//TODO: Registration Syntax Validation
+//TODO: ADD ANOTHER FEATURE
+//TODO: STYLING
 
 const App = () => {
   return (
@@ -19,6 +26,7 @@ const App = () => {
         <Scene key='home' component={HomeScreen} title='home'hideNavBar={true} />
         <Scene key='pokemonDetail' component={PokemonDetailScreen} title='pokemon detail'hideNavBar={true} />
         <Scene key='login' component={LoginScreen} title='login' hideNavBar={true} />
+        <Scene key='register' component={RegisterScreen} title='register' hideNavBar={true} />
         
       </Stack>
     </Router>

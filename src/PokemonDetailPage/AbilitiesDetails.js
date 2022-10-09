@@ -14,7 +14,7 @@ const AbilitiesDetails = (props) => {
         <View style={styles.container}>
             {
                 pokemon.abilities.map((stat) => {
-                    return (<View style={[styles.stat_container, {backgroundColor: bgColor}]}>
+                    return (<View key={stat.ability.name} style={[styles.stat_container, {backgroundColor: bgColor}]}>
                         <Text style={styles.stat_text}>{stat.ability.name.toUpperCase()}</Text>
                     </View>)
                 })

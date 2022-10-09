@@ -1,24 +1,81 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useEffect, useState } from 'react';
-import { Image, Pressable, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StatusBar, StyleSheet, Text, ToastAndroid, View } from "react-native";
 import { Actions } from 'react-native-router-flux';
 import IconFW from 'react-native-vector-icons/FontAwesome';
 import IconMT from 'react-native-vector-icons/MaterialIcons';
 import { POKEMON_TYPE_COLORS } from '../constants/pokemonTypeColors';
+import { realmConnection } from '../realm/realmConnection';
 import DetailsSection from './DetailsSection';
+
 
 const PokemonDetailDisplay = (props) => {
 
-    const [isFavorite, setIsFavorite] = useState(false);
+    const [isFavorite, setIsFavorite] = useState();
 
-
+    
+    const realm = realmConnection
     const pokemon = props.pokemon;
     const bgColor = POKEMON_TYPE_COLORS[pokemon.types[0].type.name].main;
     const accentColor = POKEMON_TYPE_COLORS[pokemon.types[0].type.name].accent;
+    const pokemonName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
-    
+
+    const checkIsFavorite = async () => {
+        const currentUserEmail = await AsyncStorage.getItem('@currentUserEmail');
+        const currentUser = await realm.objectForPrimaryKey("Accounts", await currentUserEmail);
+        const pokemonIndex = await currentUser.favoritePokemon.indexOf(pokemon.name);
+
+        if (pokemonIndex < 0) {
+            setIsFavorite(false)
+        } else {
+            setIsFavorite(true)
+        }
+
+    }
+
+    useEffect(() => {
+        checkIsFavorite();
+    }, [])
+
+
+    const handleFavoriteToggle = async () => {
+        const currentUserEmail = await AsyncStorage.getItem('@currentUserEmail');
+        const currentUser = await realm.objectForPrimaryKey("Accounts", await currentUserEmail);
+
+        try {
+
+            if (!isFavorite) {
+                realm.write(() => {
+                    currentUser.favoritePokemon.push(pokemon.name)
+                })
+
+                setIsFavorite(true);
+                ToastAndroid.show(`${pokemonName} Added To Favorites`, ToastAndroid.SHORT);
+
+
+            } else {
+                const pokemonIndex = await currentUser.favoritePokemon.indexOf(pokemon.name);
+
+                realm.write(() => {
+                    currentUser.favoritePokemon.splice(pokemonIndex, 1);
+                })
+
+                setIsFavorite(false);
+                ToastAndroid.show(`${pokemonName} Removed From Favorites`, ToastAndroid.SHORT);
+            }
+
+        } catch (e) {
+            console.log(e);
+        }
+
+
+    }
+
+
     return (
         <View style={styles.container}>
-            
+
             <StatusBar backgroundColor={bgColor} barStyle="light-content" hidden={false} />
             <View style={[styles.top_bar, { backgroundColor: bgColor }]}>
 
@@ -38,10 +95,17 @@ const PokemonDetailDisplay = (props) => {
             </View>
 
             <View style={[styles.image_parent_container, { backgroundColor: accentColor }]}>
-                {isFavorite ? (<IconMT name="favorite" size={35} style={[styles.favorite_icon, {color: 'red'}]} />) 
-                :
-                (<IconMT name="favorite-outline" size={35} style={styles.favorite_icon} />)
-                }
+
+                <Pressable
+                    style={[styles.favorite_icon]}
+                    onPress={handleFavoriteToggle}>
+
+                    {isFavorite ? (<IconMT name="favorite" size={35} style={[styles.favorite_icon, { color: 'red' }]} />)
+                        :
+                        (<IconMT name="favorite-outline" size={35} style={styles.favorite_icon} />)
+                    }
+
+                </Pressable>
 
                 <Image
                     source={
@@ -51,72 +115,15 @@ const PokemonDetailDisplay = (props) => {
                     resizeMode='cover'
                 />
             </View>
-            <View style={[styles.types_container, {backgroundColor: bgColor}]}>
-            {pokemon.types.map((type) =>
-                            <View  style={[styles.pokemon_type_container, {backgroundColor: accentColor}]}>
-                                <Text style={styles.pokemon_type_text}>{type.type.name.toUpperCase()}</Text>
-                            </View>
-                        )}
+            <View style={[styles.types_container, { backgroundColor: bgColor }]}>
+                {pokemon.types.map((type) =>
+                    <View key={type.type.name} style={[styles.pokemon_type_container, { backgroundColor: accentColor }]}>
+                        <Text style={styles.pokemon_type_text}>{type.type.name.toUpperCase()}</Text>
+                    </View>
+                )}
             </View>
-            <DetailsSection pokemon={pokemon} mainColor={bgColor}/>
+            <DetailsSection pokemon={pokemon} mainColor={bgColor} />
         </View>
-        // <ImageBackground 
-        // source={require('../../assets/images/pokeballDarker.png')}
-        // style={styles.container}
-        // resizeMode='contain'
-        // imageStyle={{bottom: 280, opacity: 0.1}}>
-
-
-        //     <View style={styles.content_container}>
-        //         <Text style={styles.pokemon_name}>{props.pokemon.name}</Text>
-
-        //         <ImageBackground source={{ uri: 'https://i.ibb.co/WgTZWXm/gameboy-frame-master.png' }}
-        //         style={[styles.pokemon_image_container, {backgroundColor: props.bgColor}]}
-        //         // imageStyle={{ borderRadius: 40 }}
-        //         >
-
-
-        //             {/* <ImageBackground source={require('../../assets/images/pokeball.png')} */}
-        //                 {/* style={styles.pokeball_image}> */}
-
-        //                 <Image
-        //                     source={
-        //                         { uri: props.pokemon.sprites.front_default }
-        //                     }
-        //                     style={styles.pokemon_image}
-        //                     resizeMode='cover'
-        //                 />
-        //             {/* </ImageBackground> */}
-        //         </ImageBackground>
-
-
-        //         <View style={[styles.bottom_container, {backgroundColor: props.bgColor,}]}>
-
-        //             <View style={styles.pokemon_types_container}>
-        //                 {props.pokemon.types.map((type) =>
-        //                     <View key={type.type.url} style={styles.pokemon_type_container}>
-        //                         <Text style={styles.pokemon_type_text}>{type.type.name}</Text>
-        //                     </View>
-        //                 )}
-
-        //             </View>
-        //             <View style={styles.info_container}>
-        //                 <View styles={styles.height_container}>
-        //                     <Text styles={styles.height_title}>Height</Text>
-        //                     <Text styles={styles.height_text}>{props.pokemon.height}</Text>
-
-        //                 </View>
-        //                 <View styles={styles.weight_container}>
-        //                     <Text styles={styles.weight_title}>Weight</Text>
-        //                     <Text styles={styles.weight_text}>{props.pokemon.weight}</Text>
-        //                 </View>
-        //             </View>
-        //         </View>
-
-
-
-        //     </View>
-        // </ImageBackground >
     );
 }
 

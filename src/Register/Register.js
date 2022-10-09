@@ -1,51 +1,50 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { useState } from 'react';
-import { KeyboardAvoidingView, Pressable, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
-import { Actions } from 'react-native-router-flux';
-import { realmConnection } from '../realm/realmConnection';
+import React, { useState } from 'react'
+import { KeyboardAvoidingView, Pressable, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { TextInput } from 'react-native-gesture-handler'
+import { Actions } from 'react-native-router-flux'
+import { realmConnection } from '../realm/realmConnection'
 
 
-const LoginScreen = () => {
+//TODO: Add email & password validation
 
-    //entypo email
-    //entypo lock
-    //zeyad@gmail.com
-    //abc123
+const Register = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const realm = realmConnection;
 
-    const handleLoginButton = async () => {
+    const handleRegisterButton = async () => {
+        let user;
 
         try {
+            realm.write(() => {
+                user = realm.create("Accounts",
+                    {
+                        email: email,
+                        password: password,
+                        favoritePokemon: []
+                    })
+            });
 
-            const userLog = realm.objectForPrimaryKey("Accounts", email);
-
-            if (userLog == null || userLog.password !== password) {
-            } else {
-                await AsyncStorage.setItem('@currentUserEmail', email);
-                Actions.home();
-            }
+            Actions.home();
 
         } catch (e) {
-            console.log(e);
+            console.log(e)
         }
+
     }
 
-    const handleNewUserButton = () => {
-        Actions.register();
+    const handleNavigateToLogin = () => {
+        Actions.login();
     }
-
     return (
         <KeyboardAvoidingView style={styles.body}>
             <StatusBar backgroundColor={'white'} barStyle="dark-content" hidden={false} />
 
-            <Text style={styles.welcome_text}>Welcome Back, Poke-X Master!</Text>
-            <Text style={styles.login_title}>Login to your Account</Text>
+            <Text style={styles.welcome_text}>Welcome To Poke-X!</Text>
+            <Text style={styles.register_title}>Enter your new account details</Text>
 
-            <View style={styles.login_container}>
+            <View style={styles.register_container}>
 
 
                 <TextInput
@@ -66,14 +65,14 @@ const LoginScreen = () => {
             </View>
 
             <Pressable
-                style={styles.login_button}
-                onPress={handleLoginButton}>
-                <Text style={styles.login_button_text} >Login</Text>
+                style={styles.register_button}
+                onPress={handleRegisterButton}>
+                <Text style={styles.register_button_text} >Register</Text>
             </Pressable>
 
             <Pressable
-                onPress={handleNewUserButton}>
-                <Text style={styles.register_text} >New User?</Text>
+                onPress={handleNavigateToLogin}>
+                <Text style={styles.register_text} >Already have an account?</Text>
             </Pressable>
 
 
@@ -99,13 +98,13 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 
-    login_title: {
+    register_title: {
         color: '#9f101f',
         fontSize: 20,
         fontFamily: 'Pixeloid Sans',
     },
 
-    login_container: {
+    register_container: {
         height: 'auto',
         // backgroundColor: 'yellow',
         alignItems: 'center',
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white'
     },
-    login_button: {
+    register_button: {
         backgroundColor: '#9f101f',
         height: 40,
         width: '40%',
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
         marginTop: -30
 
     },
-    login_button_text: {
+    register_button_text: {
         color: 'white',
         fontFamily: 'Pixeloid Sans',
     },
@@ -144,7 +143,4 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     }
 })
-
-export default LoginScreen;
-
-
+export default Register
