@@ -39,6 +39,12 @@
 		B5C7A772295A41BF9C9079E2 /* Pocket Monk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F50C6AF89B87467B958CE73D /* Pocket Monk.ttf */; };
 		98E95D918FC04F27AB06F2E4 /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9AD57722EF46A58C5FF7A9 /* Pokemon Solid.ttf */; };
 		2CF726D9246A47FFBAB9F433 /* Pokemon Hollow Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78F7DE1C27EE40939894232F /* Pokemon Hollow Normal.ttf */; };
+		70165CB431E04C3E84E573EA /* PixeloidMono-1G8ae.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9ED9228A5914FDA97637CB7 /* PixeloidMono-1G8ae.ttf */; };
+		B82DE27EAC2D4A7CB5CCEB02 /* PixeloidSans-nR3g1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85228A31FEEE43A3ACE53949 /* PixeloidSans-nR3g1.ttf */; };
+		0513201E598748828A454AC7 /* PixeloidSansBold-RpeJo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7A3382C45D64A86B4654161 /* PixeloidSansBold-RpeJo.ttf */; };
+		2280AF377BF24B7DB339DE5E /* Pixeloid Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7206D75CAC9F45A0A54EFC4A /* Pixeloid Mono.ttf */; };
+		35E92461A63E47F79D47133F /* Pixeloid Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF486AB4DD1F4051AA8281D5 /* Pixeloid Sans Bold.ttf */; };
+		D40282D611CE4BE1BC34AEE6 /* Pixeloid Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B74FAA9573A428CAF6B094F /* Pixeloid Sans.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +100,12 @@
 		F50C6AF89B87467B958CE73D /* Pocket Monk.ttf */ = {isa = PBXFileReference; name = "Pocket Monk.ttf"; path = "../assets/fonts/Pocket Monk.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AC9AD57722EF46A58C5FF7A9 /* Pokemon Solid.ttf */ = {isa = PBXFileReference; name = "Pokemon Solid.ttf"; path = "../assets/fonts/Pokemon Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		78F7DE1C27EE40939894232F /* Pokemon Hollow Normal.ttf */ = {isa = PBXFileReference; name = "Pokemon Hollow Normal.ttf"; path = "../assets/fonts/Pokemon Hollow Normal.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B9ED9228A5914FDA97637CB7 /* PixeloidMono-1G8ae.ttf */ = {isa = PBXFileReference; name = "PixeloidMono-1G8ae.ttf"; path = "../assets/fonts/PixeloidMono-1G8ae.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		85228A31FEEE43A3ACE53949 /* PixeloidSans-nR3g1.ttf */ = {isa = PBXFileReference; name = "PixeloidSans-nR3g1.ttf"; path = "../assets/fonts/PixeloidSans-nR3g1.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D7A3382C45D64A86B4654161 /* PixeloidSansBold-RpeJo.ttf */ = {isa = PBXFileReference; name = "PixeloidSansBold-RpeJo.ttf"; path = "../assets/fonts/PixeloidSansBold-RpeJo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7206D75CAC9F45A0A54EFC4A /* Pixeloid Mono.ttf */ = {isa = PBXFileReference; name = "Pixeloid Mono.ttf"; path = "../assets/fonts/Pixeloid Mono.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF486AB4DD1F4051AA8281D5 /* Pixeloid Sans Bold.ttf */ = {isa = PBXFileReference; name = "Pixeloid Sans Bold.ttf"; path = "../assets/fonts/Pixeloid Sans Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2B74FAA9573A428CAF6B094F /* Pixeloid Sans.ttf */ = {isa = PBXFileReference; name = "Pixeloid Sans.ttf"; path = "../assets/fonts/Pixeloid Sans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +239,12 @@
 				F50C6AF89B87467B958CE73D /* Pocket Monk.ttf */,
 				AC9AD57722EF46A58C5FF7A9 /* Pokemon Solid.ttf */,
 				78F7DE1C27EE40939894232F /* Pokemon Hollow Normal.ttf */,
+				B9ED9228A5914FDA97637CB7 /* PixeloidMono-1G8ae.ttf */,
+				85228A31FEEE43A3ACE53949 /* PixeloidSans-nR3g1.ttf */,
+				D7A3382C45D64A86B4654161 /* PixeloidSansBold-RpeJo.ttf */,
+				7206D75CAC9F45A0A54EFC4A /* Pixeloid Mono.ttf */,
+				AF486AB4DD1F4051AA8281D5 /* Pixeloid Sans Bold.ttf */,
+				2B74FAA9573A428CAF6B094F /* Pixeloid Sans.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -353,6 +371,12 @@
 				B5C7A772295A41BF9C9079E2 /* Pocket Monk.ttf in Resources */,
 				98E95D918FC04F27AB06F2E4 /* Pokemon Solid.ttf in Resources */,
 				2CF726D9246A47FFBAB9F433 /* Pokemon Hollow Normal.ttf in Resources */,
+				70165CB431E04C3E84E573EA /* PixeloidMono-1G8ae.ttf in Resources */,
+				B82DE27EAC2D4A7CB5CCEB02 /* PixeloidSans-nR3g1.ttf in Resources */,
+				0513201E598748828A454AC7 /* PixeloidSansBold-RpeJo.ttf in Resources */,
+				2280AF377BF24B7DB339DE5E /* Pixeloid Mono.ttf in Resources */,
+				35E92461A63E47F79D47133F /* Pixeloid Sans Bold.ttf in Resources */,
+				D40282D611CE4BE1BC34AEE6 /* Pixeloid Sans.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

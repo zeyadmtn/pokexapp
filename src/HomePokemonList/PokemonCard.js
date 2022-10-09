@@ -63,11 +63,10 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     pokemon_name: {
-        fontFamily: 'Pokemon GB',
+        fontFamily: 'Pixeloid Mono',
         opacity: 0.8,
-        fontSize: 20,
+        fontSize: 22,
         color: 'white',
-        letterSpacing: -4
     },
     right_side_container: {
         width: '40%',

@@ -7,7 +7,7 @@ import { StatusBar } from 'react-native';
 function SplashScreen() {
 
     useEffect(() => {
-        setTimeout(() => Actions.home(), 2000);
+        setTimeout(() => Actions.login(), 500);
         StatusBar.setHidden(true);
     });
 

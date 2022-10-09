@@ -1,17 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
+ import { AppRegistry } from "react-native";
 import React from 'react';
 import {
   StyleSheet
 } from 'react-native';
 import { Router, Scene, Stack } from 'react-native-router-flux';
 import HomeScreen from './src/Screens/HomeScreen';
+import LoginScreen from './src/Screens/LoginScreen';
 import PokemonDetailScreen from './src/Screens/PokemonDetailScreen';
 import SplashScreen from './src/Screens/SplashScreen';
 
@@ -23,6 +18,7 @@ const App = () => {
         <Scene key='splash' component={SplashScreen} title='splash' initial={true} hideNavBar={true} />
         <Scene key='home' component={HomeScreen} title='home'hideNavBar={true} />
         <Scene key='pokemonDetail' component={PokemonDetailScreen} title='pokemon detail'hideNavBar={true} />
+        <Scene key='login' component={LoginScreen} title='login' hideNavBar={true} />
         
       </Stack>
     </Router>
