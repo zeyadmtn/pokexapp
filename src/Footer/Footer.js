@@ -29,7 +29,7 @@ const Footer = () => {
             </Pressable>
 
             <Pressable
-                onPress={() => handleButtonPress('home')}>
+                onPress={() => handleButtonPress('account')}>
                 <IconMT name="account-circle" size={30} style={[styles.favorite_icon, { color: '#ea2a3e' }]} />
             </Pressable>
 

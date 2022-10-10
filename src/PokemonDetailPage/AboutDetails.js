@@ -46,15 +46,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     stat_title: {
-        fontSize: 25,
+        fontSize: 19,
         marginLeft: 10,
-        fontFamily: 'Pocket Monk',
+        fontFamily: 'Pixeloid Sans Bold',
         letterSpacing: 0
     },
     stat_text: {
        alignSelf: 'center',
-       fontFamily: 'Pocket Monk',
-       fontSize: 21,
+       fontFamily: 'Pixeloid Sans',
+       fontSize: 19,
        marginBottom: 20,
        marginTop: 10,
     }

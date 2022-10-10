@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     },
 
     stat_text: {
-       fontFamily: 'Pocket Monk',
-       fontSize: 21,
+       fontFamily: 'Pixeloid Mono',
+       fontSize: 16,
        marginTop: 10,
     }
 

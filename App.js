@@ -11,16 +11,18 @@ import PokemonDetailScreen from './src/Screens/PokemonDetailScreen';
 import SplashScreen from './src/Screens/SplashScreen';
 import RegisterScreen from "./src/Screens/RegisterScreen";
 import FavoritesScreen from "./src/Screens/FavoritesScreen";
+import ViewAccount from "./src/ViewAccount/ViewAccount";
+import ViewAccountScreen from "./src/Screens/ViewAccountScreen";
 
 //TODO: Add search function
 //TODO: Login validation alert
 //TODO: Registration Accounts Validation
 //TODO: Registration Syntax Validation
-//TODO: ADD ANOTHER FEATURE
 //TODO: STYLING
 //TODO: Separate Login Componant
 //TODO: Centralize colors in Constants
 //TODO: Cleanup code
+//TODO: Add back icon
 
 
 const App = () => {
@@ -34,6 +36,7 @@ const App = () => {
         <Scene key='login' component={LoginScreen} title='login' hideNavBar={true} />
         <Scene key='register' component={RegisterScreen} title='register' hideNavBar={true} />
         <Scene key='favorites' component={FavoritesScreen} title='favorites' hideNavBar={true} />
+        <Scene key='account' component={ViewAccountScreen} title='account' hideNavBar={true} />
         
       </Stack>
     </Router>

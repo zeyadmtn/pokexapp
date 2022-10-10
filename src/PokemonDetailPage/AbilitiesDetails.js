@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '50%',
+        width: '70%',
         marginBottom: 10,
         borderRadius: 40,
         padding: 10
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     },
 
     stat_text: {
-        fontFamily: 'Pocket Monk',
-        fontSize: 21,
+        fontFamily: 'Pixeloid Sans Bold',
+        fontSize: 15,
         color: 'white',
 
     }

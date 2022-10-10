@@ -53,7 +53,7 @@ const DetailsSection = (props) => {
         }
     }
     return (
-        <View style={[styles.container, { borderColor: mainColor, borderWidth: 9, borderTopWidth: 0 }]}>
+        <View style={[styles.container, ]}>
             <View style={styles.details_type_container}>
 
                 {sections.previous !== null ?
@@ -94,12 +94,13 @@ const DetailsSection = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
+        width: '90%',
         height: '100%',
         backgroundColor: 'white',
         paddingHorizontal: 55,
         paddingTop: 30,
         alignItems: 'center',
+        borderRadius: 40,
         
     },
     details_type_container: {

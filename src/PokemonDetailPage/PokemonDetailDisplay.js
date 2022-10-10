@@ -75,7 +75,7 @@ const PokemonDetailDisplay = (props) => {
 
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {backgroundColor: bgColor}]}>
 
             <StatusBar backgroundColor={bgColor} barStyle="light-content" hidden={false} />
             <View style={[styles.top_bar, { backgroundColor: bgColor }]}>
@@ -134,7 +134,8 @@ const PokemonDetailDisplay = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black'
+        alignItems: 'center'
+
     },
     top_bar: {
         width: '100%',
