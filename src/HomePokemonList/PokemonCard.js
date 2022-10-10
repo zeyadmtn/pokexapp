@@ -43,7 +43,7 @@ const PokemonCard = (props) => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 78,
+        height: 80,
         marginTop: 15,
         marginBottom: 15,
         marginLeft: 5,
@@ -51,9 +51,9 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 25,
         padding: 10,
         flexDirection: 'row',
-        elevation: 20,
+        elevation: 5,
         shadowColor: 'black',
-        paddingTop: 15,
+        paddingTop: 10,
         overflow: 'visible',
 
     },
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     right_side_container: {
         width: '40%',
         height: '135%',
-        //backgroundColor: 'white',
         marginLeft: 'auto',
         borderBottomLeftRadius: 50,
         borderTopLeftRadius: 50,

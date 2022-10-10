@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingHorizontal: 55,
         paddingTop: 30,
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
     details_type_container: {
         flexDirection: 'row',

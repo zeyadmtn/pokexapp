@@ -16,7 +16,6 @@ export const fetchPokemonList = async () => {
 export const fetchPokemonDataByURL = async (pokemonUrl) => {
     try {
         const response = await pokemonApi.get(pokemonUrl);
-
         return response.data;
     } catch (error) {
         throw error;

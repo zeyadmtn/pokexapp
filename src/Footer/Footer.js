@@ -30,7 +30,7 @@ const Footer = () => {
 
             <Pressable
                 onPress={() => handleButtonPress('home')}>
-            <IconMT name="account-circle" size={30} style={[styles.favorite_icon, { color: '#ea2a3e' }]} />
+                <IconMT name="account-circle" size={30} style={[styles.favorite_icon, { color: '#ea2a3e' }]} />
             </Pressable>
 
         </View>
@@ -40,7 +40,7 @@ const Footer = () => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        backgroundColor: 'white',
+        backgroundColor: '#faf5f5',
         height: 45,
         zIndex: 1,
         position: 'absolute',
@@ -52,9 +52,10 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 10,
         borderTopLeftRadius: 10,
 
+
     },
     pokeball_icon_container: {
-        backgroundColor: 'white',
+        backgroundColor: '#faf5f5',
         width: 90,
         height: 90,
         alignItems: 'center',

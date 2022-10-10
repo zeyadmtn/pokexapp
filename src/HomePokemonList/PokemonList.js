@@ -3,22 +3,13 @@ import { FlatList, Image, ImageBackground, ScrollView, View } from "react-native
 import { fetchAllPokemonData } from "../api/fetchPokemonData";
 import PokemonCard from "./PokemonCard";
 
-const PokemonList = () => {
-
-    const [pokemonList, setPokemonList] = useState();
-
-    const fetchData = async () => {
-        const data = await fetchAllPokemonData();
-        setPokemonList(data);
-    }
+const PokemonList = (props) => {
 
     const renderPokemonCard = ({ item }) => (
         <PokemonCard pokemon={item} />
     );
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    const pokemonList = props.pokemonList;
 
     return (
         <View style={{ flex: 1, width: '100%', flexGrow: 1, marginBottom: 40, }}>
