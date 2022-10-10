@@ -21,7 +21,7 @@ const PokemonList = () => {
     }, []);
 
     return (
-        <View style={{ flex: 1, width: '100%', flexGrow: 1, }}>
+        <View style={{ flex: 1, width: '100%', flexGrow: 1, marginBottom: 40, }}>
             <FlatList
                 data={pokemonList}
                 renderItem={renderPokemonCard}

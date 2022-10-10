@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Pocket Monk',
         fontSize: 27,
-        color: 'black',
+        color: '#9f101f',
         width: '50%',
         marginLeft: 50,
         letterSpacing: 2.5

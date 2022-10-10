@@ -7,7 +7,7 @@ import { StatusBar } from 'react-native';
 function SplashScreen() {
 
     useEffect(() => {
-        setTimeout(() => Actions.login(), 500);
+        setTimeout(() => Actions.login(), 2000);
         StatusBar.setHidden(true);
     });
 
@@ -17,7 +17,7 @@ function SplashScreen() {
         <View>
             <Image 
                     source={
-                        require('../../assets/images/splashscreen.jpg')
+                        require('../../assets/images/splash_screen.png')
                     }
                     style={styles.splash_image}
                     resizeMode='stretch'

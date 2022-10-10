@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import IconFW from 'react-native-vector-icons/FontAwesome';
 import IconMT from 'react-native-vector-icons/MaterialIcons';
 import { POKEMON_TYPE_COLORS } from '../constants/pokemonTypeColors';
+import Footer from '../Footer/Footer';
 import { realmConnection } from '../realm/realmConnection';
 import DetailsSection from './DetailsSection';
 
@@ -123,6 +124,9 @@ const PokemonDetailDisplay = (props) => {
                 )}
             </View>
             <DetailsSection pokemon={pokemon} mainColor={bgColor} />
+
+            
+            <Footer />
         </View>
     );
 }
