@@ -18,6 +18,7 @@ const PokemonList = (props) => {
                 renderItem={renderPokemonCard}
                 keyExtractor={item => item.name} 
                 scrollEnabled={true}
+                onEndReached={null}
                 />
         </View>
     );
