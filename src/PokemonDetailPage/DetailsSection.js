@@ -111,7 +111,8 @@ const styles = StyleSheet.create({
         fontSize: 25,
         alignSelf: 'center',
         marginHorizontal: 25,
-        marginTop: -2
+        marginTop: -2,
+        color: 'black'
     }
 });
 

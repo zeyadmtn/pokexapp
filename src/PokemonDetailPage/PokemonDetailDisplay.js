@@ -10,13 +10,12 @@ import { realmConnection } from '../realm/realmConnection';
 import DetailsSection from './DetailsSection';
 
 
-const PokemonDetailDisplay = (props) => {
+const PokemonDetailDisplay = ({ pokemon }) => {
 
-    const [isFavorite, setIsFavorite] = useState();
+    const [isFavorite, setIsFavorite] = useState([]);
 
-    
+
     const realm = realmConnection
-    const pokemon = props.pokemon;
     const bgColor = POKEMON_TYPE_COLORS[pokemon.types[0].type.name].main;
     const accentColor = POKEMON_TYPE_COLORS[pokemon.types[0].type.name].accent;
     const pokemonName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
@@ -24,14 +23,11 @@ const PokemonDetailDisplay = (props) => {
 
     const checkIsFavorite = async () => {
         const currentUserEmail = await AsyncStorage.getItem('@currentUserEmail');
-        const currentUser = await realm.objectForPrimaryKey("Accounts", await currentUserEmail);
+        const currentUser = await realm.objectForPrimaryKey("Accounts", currentUserEmail);
         const pokemonIndex = await currentUser.favoritePokemon.indexOf(pokemon.name);
 
-        if (pokemonIndex < 0) {
-            setIsFavorite(false)
-        } else {
-            setIsFavorite(true)
-        }
+        setIsFavorite(!(pokemonIndex < 0))
+
 
     }
 
@@ -75,7 +71,7 @@ const PokemonDetailDisplay = (props) => {
 
 
     return (
-        <View style={[styles.container, {backgroundColor: bgColor}]}>
+        <View style={[styles.container, { backgroundColor: bgColor }]}>
 
             <StatusBar backgroundColor={bgColor} barStyle="light-content" hidden={false} />
             <View style={[styles.top_bar, { backgroundColor: bgColor }]}>
@@ -125,7 +121,7 @@ const PokemonDetailDisplay = (props) => {
             </View>
             <DetailsSection pokemon={pokemon} mainColor={bgColor} />
 
-            
+
             <Footer />
         </View>
     );

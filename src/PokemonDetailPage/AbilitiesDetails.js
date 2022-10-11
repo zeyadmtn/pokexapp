@@ -2,10 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { POKEMON_TYPE_COLORS } from '../constants/pokemonTypeColors';
 
+const AbilitiesDetails = ({pokemon}) => {
 
-const AbilitiesDetails = (props) => {
-
-    const pokemon = props.pokemon;
     const bgColor = POKEMON_TYPE_COLORS[pokemon.types[0].type.name].main;
 
 
