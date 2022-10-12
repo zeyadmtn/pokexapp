@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, { useEffect, useState } from 'react'
 import { Pressable, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import IconEN from 'react-native-vector-icons/Entypo'
 import Footer from '../Footer/Footer'
 import { realmConnection } from '../realm/realmConnection'
@@ -48,15 +49,15 @@ const ViewAccount = () => {
 
                     {
                         passwordVisible ?
-                        <Text style={styles.info_text}>{password}</Text>
-                        :
-                        <Text style={styles.info_text}>**********</Text>
+                            <Text style={styles.info_text}>{password}</Text>
+                            :
+                            <Text style={styles.info_text}>**********</Text>
                     }
 
                     {
                         passwordVisible ?
                             <Pressable onPress={() => setPasswordVisibile(!passwordVisible)}
-                            style={styles.visibility_icon}>
+                                style={styles.visibility_icon}>
                                 <IconEN name='eye'
                                     color={'white'}
 
@@ -64,7 +65,7 @@ const ViewAccount = () => {
                             </Pressable>
                             :
                             <Pressable onPress={() => setPasswordVisibile(!passwordVisible)}
-                            style={styles.visibility_icon}>
+                                style={styles.visibility_icon}>
                                 <IconEN name='eye-with-line'
                                     color={'white'}
 
@@ -72,7 +73,14 @@ const ViewAccount = () => {
                             </Pressable>
                     }
 
+
+
                 </View>
+                <Pressable
+                    onPress={() => Actions.login()}>
+                    <Text style={styles.register_text} >Sign Out</Text>
+                </Pressable>
+
             </View>
 
 
@@ -130,6 +138,13 @@ const styles = StyleSheet.create({
     },
     visibility_icon: {
         marginLeft: 'auto',
+    },
+    register_text: {
+        color: 'blue',
+        fontFamily: 'Pixeloid Sans',
+        borderBottomColor: 'blue',
+        borderBottomWidth: 1,
+        marginTop: 80,
     }
 })
 

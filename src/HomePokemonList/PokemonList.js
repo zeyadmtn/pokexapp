@@ -12,7 +12,7 @@ const PokemonList = ({ pokemonList, loadMore, isPaginationLoading }) => {
     );
 
     return (
-        <View style={{ flex: 1, width: '100%', flexGrow: 1, marginBottom: 40, }}>
+        <View style={{ flex: 1, width: '100%', flexGrow: 1, marginBottom: 40, overflow: 'hidden'}}>
             <FlatList
                 data={pokemonList}
                 renderItem={renderPokemonCard}
@@ -24,6 +24,8 @@ const PokemonList = ({ pokemonList, loadMore, isPaginationLoading }) => {
                     <ActivityIndicator size={40} color="red" style={{marginTop: 20, marginBottom: 60,}}/>
                     : null
                 }
+                
+                removeClippedSubviews={true}
             />
         </View>
     );

@@ -28,7 +28,7 @@ import ViewAccountScreen from "./src/Screens/ViewAccountScreen";
 const App = () => {
   return (
     <Router>
-      <Stack key="root" >
+      <Stack>
         
         <Scene key='splash' component={SplashScreen} title='splash' initial={true} hideNavBar={true} />
         <Scene key='home' component={HomeScreen} title='home'hideNavBar={true} />

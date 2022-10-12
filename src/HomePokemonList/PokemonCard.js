@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         paddingTop: 10,
         overflow: 'visible',
+        
 
     },
     left_side_container: {
