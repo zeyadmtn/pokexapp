@@ -26,7 +26,7 @@ const Register = () => {
                     })
             });
 
-            Actions.home();
+            Actions.login();
 
         } catch (e) {
             console.log(e)

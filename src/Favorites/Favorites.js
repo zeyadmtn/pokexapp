@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Lottie from 'lottie-react-native';
 import React, { useEffect, useState } from 'react';
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import { fetchPokemonDataByURL } from '../api/fetchPokemonData';
+import { fetchIndividualPokemon, fetchPokemonDataByURL } from '../api/fetchPokemonData';
 import { POKEMON_INDIVIDUAL_ENDPOINT } from '../constants/pokemonEndpoint';
 import Footer from '../Footer/Footer';
 import PokemonList from '../HomePokemonList/PokemonList';
@@ -20,11 +20,10 @@ const Favorites = () => {
             const currentUserEmail = await AsyncStorage.getItem('@currentUserEmail');
             const user = await realm.objectForPrimaryKey("Accounts", currentUserEmail);
             const favorites = await user.favoritePokemon;
-            var pokemonArr = [];
             const pokemonURLS = [];
             setIsLoading(true);
 
-
+            //remove this and add it to the listview props
             if (favorites.length < 0) {
                 return <Text>You have no favorite pokemons :(</Text>
             } else {
@@ -34,7 +33,7 @@ const Favorites = () => {
                 });
 
                 for (const url of pokemonURLS) {
-                    await fetchPokemonDataByURL(url).then((pokemon) => {
+                    await fetchIndividualPokemon(url).then((pokemon) => {
                         setFavoritePokemons(x => [...x, pokemon]);
 
                     })
