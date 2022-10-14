@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react-native';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from "react-native";
-import { fetchAllPokemonData, fetchPokemonDataByURL } from '../api/fetchPokemonData';
+import { StyleSheet, View } from "react-native";
+import { fetchPokemonList } from '../api/fetchPokemonData';
 import Footer from '../Footer/Footer';
 import HomeNavbar from "../HomeNavBar/HomeNavBar";
 import PokemonList from "../HomePokemonList/PokemonList";
@@ -20,7 +20,7 @@ function HomeScreen() {
         } else {
             setIsPaginationLoading(true)
         }
-        const [data, next] = await fetchPokemonDataByURL(nextURL);
+        const [data, next] = await fetchPokemonList(nextURL);
         setNextURL(next);
         setPokemonList(prev => [...prev, ...data]);
         setIsLoading(false)

@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import IconEN from 'react-native-vector-icons/Entypo';
 import IconFW5 from 'react-native-vector-icons/FontAwesome5';
 import IconMTC from 'react-native-vector-icons/MaterialCommunityIcons';
+
+
 const AboutDetails = (props) => {
 
     const pokemon = props.pokemon;

@@ -1,19 +1,7 @@
 import { POKEMON_ENDPOINT } from "../constants/pokemonEndpoint";
 import { pokemonApi } from "./pokemonApi";
 
-export const fetchPokemonList = async (offset, limit) => {
-    try {
-        const params = '?offset=' + 0 + '&limit=' + 10;
-        const url = POKEMON_ENDPOINT + params;
-
-        const response = await pokemonApi.get(url)
-        return response.data.results;
-    } catch (error) {
-        throw error;
-    }
-}
-
-export const fetchPokemonDataByURL = async (pokemonUrl) => {
+export const fetchPokemonList = async (pokemonUrl) => {
     const initial_url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=5'
 
     let pokemonDataArray = [];
@@ -48,24 +36,5 @@ export const fetchIndividualPokemon = async (pokemonUrl) => {
         return response.data;
     } catch (error) {
         throw error;
-    }
-}
-
-export const fetchAllPokemonData = async () => {
-    try {
-        const pokemonList = await fetchPokemonList();
-
-        let pokemonDataArray = [];
-
-        for (const pokemon of pokemonList) {
-            let res = await pokemonApi.get(pokemon.url);
-            pokemonDataArray.push(res.data);
-        }
-
-        return pokemonDataArray;
-
-
-    } catch (e) {
-        console.error(e);
     }
 }

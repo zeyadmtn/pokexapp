@@ -5,7 +5,7 @@ import AbilitiesDetails from './AbilitiesDetails';
 import AboutDetails from './AboutDetails';
 import BaseStatsDetails from './BaseStatsDetails';
 
-const DetailsSection = (props) => {
+const DetailsSection = ({pokemon, mainColor}) => {
 
     const [sections, setSections] = useState({
         previous: null,
@@ -13,11 +13,6 @@ const DetailsSection = (props) => {
         current: 'about',
     });
 
-    const pokemon = props.pokemon;
-    const mainColor = props.mainColor;
-
-
-    //TODO: Refactor this into a simpler method
     const handleDetailsSectionChange = (navigationType) => {
         if (navigationType == 'back') {
             if (sections.current == 'base_stats') {

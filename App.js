@@ -1,28 +1,13 @@
 
- import { AppRegistry } from "react-native";
 import React from 'react';
-import {
-  StyleSheet
-} from 'react-native';
 import { Router, Scene, Stack } from 'react-native-router-flux';
+import FavoritesScreen from "./src/Screens/FavoritesScreen";
 import HomeScreen from './src/Screens/HomeScreen';
 import LoginScreen from './src/Screens/LoginScreen';
 import PokemonDetailScreen from './src/Screens/PokemonDetailScreen';
-import SplashScreen from './src/Screens/SplashScreen';
 import RegisterScreen from "./src/Screens/RegisterScreen";
-import FavoritesScreen from "./src/Screens/FavoritesScreen";
-import ViewAccount from "./src/ViewAccount/ViewAccount";
+import SplashScreen from './src/Screens/SplashScreen';
 import ViewAccountScreen from "./src/Screens/ViewAccountScreen";
-
-//TODO: Add search function
-//TODO: Login validation alert
-//TODO: Registration Accounts Validation
-//TODO: Registration Syntax Validation
-//TODO: STYLING
-//TODO: Separate Login Componant
-//TODO: Centralize colors in Constants
-//TODO: Cleanup code
-//TODO: Add back icon
 
 
 const App = () => {
@@ -42,24 +27,5 @@ const App = () => {
     </Router>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

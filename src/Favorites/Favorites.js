@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Lottie from 'lottie-react-native';
 import React, { useEffect, useState } from 'react';
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import { fetchIndividualPokemon, fetchPokemonDataByURL } from '../api/fetchPokemonData';
+import { fetchIndividualPokemon } from '../api/fetchPokemonData';
 import { POKEMON_INDIVIDUAL_ENDPOINT } from '../constants/pokemonEndpoint';
 import Footer from '../Footer/Footer';
 import PokemonList from '../HomePokemonList/PokemonList';

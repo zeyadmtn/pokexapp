@@ -4,9 +4,6 @@ import { TextInput } from 'react-native-gesture-handler'
 import { Actions } from 'react-native-router-flux'
 import { realmConnection } from '../realm/realmConnection'
 
-
-//TODO: Add email & password validation
-
 const Register = () => {
 
     const [email, setEmail] = useState('');
@@ -79,8 +76,6 @@ const Register = () => {
         </KeyboardAvoidingView>
     )
 }
-//#9f101f
-//#eeedf0
 
 const styles = StyleSheet.create({
     body: {

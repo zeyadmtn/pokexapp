@@ -1,11 +1,8 @@
-import React from 'react'
-import { View } from 'react-native'
-import ViewAccount from '../ViewAccount/ViewAccount'
+import React from 'react';
+import ViewAccount from '../ViewAccount/ViewAccount';
 
 const ViewAccountScreen = () => {
-  return (
-    <ViewAccount />
-  )
-}
+  return <ViewAccount />;
+};
 
-export default ViewAccountScreen
+export default ViewAccountScreen;
