@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginHorizontal: 25,
         marginTop: -2,
-        color: 'grey'
+        color: '#5c5c5c',
     }
 });
 

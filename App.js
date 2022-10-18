@@ -9,7 +9,6 @@ import RegisterScreen from "./src/Screens/RegisterScreen";
 import SplashScreen from './src/Screens/SplashScreen';
 import ViewAccountScreen from "./src/Screens/ViewAccountScreen";
 
-
 const App = () => {
   return (
     <Router>

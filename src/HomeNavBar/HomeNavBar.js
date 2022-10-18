@@ -7,7 +7,7 @@ const HomeNavbar = () => {
         <View style={styles.container}>
             <Text style={styles.title}>Poki-X</Text>
             <View style={styles.icon}>
-                <Icon name="search" size={24} color="black" />
+                {/* <Icon name="search" size={24} color="black" /> */}
             </View>
 
         </View>

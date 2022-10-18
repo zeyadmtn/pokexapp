@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, Pressable, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { KeyboardAvoidingView, Pressable, StatusBar, StyleSheet, Text, ToastAndroid, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { Actions } from 'react-native-router-flux'
 import { realmConnection } from '../realm/realmConnection'
@@ -22,10 +22,11 @@ const Register = () => {
                         favoritePokemon: []
                     })
             });
-
+            ToastAndroid.show("Registered Account Successfully", ToastAndroid.SHORT);
             Actions.login();
 
         } catch (e) {
+            ToastAndroid.show("An account with this email already exists.", ToastAndroid.SHORT);
             console.log(e)
         }
 

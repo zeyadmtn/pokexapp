@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux'
 import IconEN from 'react-native-vector-icons/Entypo'
 import Footer from '../Footer/Footer'
 import { realmConnection } from '../realm/realmConnection'
+import IconFW from 'react-native-vector-icons/FontAwesome';
 
 //TODO: Add email & password validation
 
@@ -36,6 +37,20 @@ const ViewAccount = () => {
         <View style={styles.body}>
             <StatusBar backgroundColor={'white'} barStyle="dark-content" hidden={false} />
             <View style={styles.nav_bar_container}>
+                                            
+            <Pressable onPress={() => {
+                    Actions.pop();
+                }}
+                    style={styles.back_icon_pressable}>
+
+                    <IconFW name='arrow-left'
+                        color={'#9f101f'}
+
+                        style={styles.back_icon_pressable}
+                        size={15} />
+
+                </Pressable>
+
                 <Text style={styles.favorites_text}>Account</Text>
             </View>
 
@@ -105,6 +120,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 0,
+        paddingLeft: 15,
 
     },
     account_container: {
@@ -116,6 +132,12 @@ const styles = StyleSheet.create({
         color: '#9f101f',
         fontFamily: 'Pocket Monk',
         fontSize: 30,
+        marginTop: -20,
+    },
+    back_icon_pressable: {
+        width: 'auto',
+        height: 15,
+        marginRight: 'auto',
     },
     info_container: {
         width: '100%',
@@ -131,6 +153,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: 'Pixeloid Sans Bold',
         marginBottom: 10,
+        color: '#5c5c5c',
+
     },
     info_text: {
         color: 'white',

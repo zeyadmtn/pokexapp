@@ -160,9 +160,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     pokemon_image: {
-        height: '85%',
-        width: '40%',
-        marginTop: -35
+        height: 180,
+        width: 180,
+        marginTop: -45
     },
     favorite_icon: {
         marginLeft: 'auto',
@@ -187,6 +187,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         letterSpacing: 2,
         fontSize: 10,
+        color: '#5c5c5c',
+
     }
 });
 

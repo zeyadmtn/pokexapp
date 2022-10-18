@@ -51,7 +51,9 @@ const styles = StyleSheet.create({
         fontSize: 19,
         marginLeft: 10,
         fontFamily: 'Pixeloid Sans Bold',
-        letterSpacing: 0
+        letterSpacing: 0,
+        color: '#5c5c5c',
+
     },
     stat_text: {
        alignSelf: 'center',
@@ -59,6 +61,8 @@ const styles = StyleSheet.create({
        fontSize: 19,
        marginBottom: 20,
        marginTop: 10,
+       color: '#5c5c5c',
+
     }
 
 })

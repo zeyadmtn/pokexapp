@@ -1,12 +1,14 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Lottie from 'lottie-react-native';
 import React, { useEffect, useState } from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { fetchIndividualPokemon } from '../api/fetchPokemonData';
 import { POKEMON_INDIVIDUAL_ENDPOINT } from '../constants/pokemonEndpoint';
 import Footer from '../Footer/Footer';
 import PokemonList from '../HomePokemonList/PokemonList';
 import { realmConnection } from '../realm/realmConnection';
+import IconFW from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
 
 const Favorites = () => {
 
@@ -56,7 +58,23 @@ const Favorites = () => {
     return (
         <View style={styles.body}>
             <StatusBar backgroundColor={'white'} barStyle="dark-content" hidden={false} />
+
+
+
             <View style={styles.nav_bar_container}>
+                            
+            <Pressable onPress={() => {
+                    Actions.pop();
+                }}
+                    style={styles.back_icon_pressable}>
+
+                    <IconFW name='arrow-left'
+                        color={'#9f101f'}
+
+                        style={styles.back_icon_pressable}
+                        size={15} />
+
+                </Pressable>
                 <Text style={styles.favorites_text}>Favorites</Text>
             </View>
 
@@ -93,7 +111,15 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         justifyContent: 'center',
         alignItems: 'center',
+        paddingLeft: 20,
+        paddingTop: 5,
 
+
+    },
+    back_icon_pressable: {
+        width: 'auto',
+        height: 15,
+        marginRight: 'auto',
     },
     loading_animation_container: {
         height: '100%',
@@ -105,6 +131,7 @@ const styles = StyleSheet.create({
         color: '#9f101f',
         fontFamily: 'Pocket Monk',
         fontSize: 30,
+        marginTop: -20,
     },
     loading_animation_style: {
         height: 200,

@@ -13,7 +13,7 @@ function SplashScreen() {
       <Image
         source={require('../../assets/images/splash_screen.png')}
         style={styles.splash_image}
-        resizeMode="stretch"
+        resizeMode="cover"
       />
     </View>
   );

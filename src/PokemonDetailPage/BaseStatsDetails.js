@@ -46,6 +46,8 @@ const styles = StyleSheet.create({
        fontFamily: 'Pixeloid Mono',
        fontSize: 16,
        marginTop: 10,
+       color: '#5c5c5c',
+
     }
 
 })

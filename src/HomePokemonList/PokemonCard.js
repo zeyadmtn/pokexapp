@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     pokemon_type_text: {
         fontFamily: 'Pocket Monk',
         letterSpacing: 2.5,
-
+        color: '#5c5c5c',
     }
     
 })
